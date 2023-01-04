@@ -1,27 +1,14 @@
 pipeline{
-
     agent any
 
     stages{
-
-        stage("static code analysis"){
-            agent{
-                docker{
-                    image 'maven'
-                }
-            }
-
+        stage("git checkout code"){
             steps{
-                withSonarQubeEnv(credentialsId: 'sonar-id' , installationName: 'sonar-server') {
-                sh 'mvn clean package sonar:sonar'
-}
-               
+
+                git branch: 'main', url: 'https://github.com/parth535/demo_app.git'
+            }
         }
+        
     }
 }
-}
-
-
-
-
 
