@@ -12,7 +12,7 @@ pipeline{
             }
 
             steps{
-                withSonarQubeEnv(credentialsId: 'sonar-token', installationName: 'sonar-server') {
+                 withSonarQubeEnv(credentialsId: 'sonar-id'){
                       sh 'mvn clean package sonar:sonar'
 
 
@@ -21,3 +21,8 @@ pipeline{
     }
 }
 }
+
+
+
+
+
