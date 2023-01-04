@@ -12,8 +12,8 @@ pipeline{
             }
 
             steps{
-                withSonarQubeEnv(credentialsId: 'sonar-id') {
-                sh 'mvn clean pakage sonar:sonar'
+                withSonarQubeEnv(credentialsId: 'sonar-id' , installationName: 'sonar-server') {
+                sh 'mvn clean package sonar:sonar'
 }
                
         }
