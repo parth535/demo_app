@@ -11,20 +11,17 @@ pipeline{
         stage("building package"){
             steps{
 
-                sh 'mvn package -Dmaven.test.skip'
+                sh 'mvn clean package -Dmaven.test.skip'
             }
-
-
 
         }
 
         stage("static code analysis"){
             steps{
 
-                withSonarQubeEnv(credentialsId: 'sonar-id' , installationName: 'sonar-server') {
+                withSonarQubeEnv(credentialsId: 'sonar-token') {
                     sh 'mvn sonar:sonar'
-    
-                 }
+              }
             }
         }
     }
