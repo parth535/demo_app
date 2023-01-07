@@ -25,6 +25,7 @@ pipeline{
             }
         }
         stage("deploy in to nexus"){
+            steps{
             nexusArtifactUploader artifacts: [
                 [artifactId: 'springboot', 
                 classifier: '', 
@@ -37,6 +38,7 @@ pipeline{
                 nexusVersion: 'nexus3', protocol: 'http', 
                 repository: 'http://13.233.28.143:8081/repository/my-repo/', 
                 version: '2.6.6'
+            }
             
         }        
     }
