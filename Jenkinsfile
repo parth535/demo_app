@@ -26,18 +26,19 @@ pipeline{
         }
         stage("deploy in to nexus"){
             steps{
-            nexusArtifactUploader artifacts: [
-                [artifactId: 'springboot', 
-                classifier: '', 
-                file: 'target/my-application.jar', 
-                type: 'jar']
-                ], 
-                credentialsId: 'nexus-id', 
-                groupId: 'org.springframework.boot', 
-                nexusUrl: 'http://13.233.28.143:8081/', 
-                nexusVersion: 'nexus3', protocol: 'http', 
-                repository: 'http://13.233.28.143:8081/repository/my-repo/', 
-                version: '1.0.0'          
+                nexusArtifactUploader artifacts: [
+                    [artifactId: 'springboot', 
+                    classifier: '', 
+                    file: 'target/my-application.jar', 
+                    type: 'jar'
+                    ]
+                    ], credentialsId: 'nexus-id', 
+                    groupId: 'com.example', 
+                    nexusUrl: 'http://13.233.28.143:8081/', 
+                    nexusVersion: 'nexus3', 
+                    protocol: 'http',
+                    repository: 'http://13.233.28.143:8081/repository/my-repo/', 
+                    version: '1.0.0'
                   }
             
         }        
