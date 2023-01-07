@@ -37,8 +37,8 @@ pipeline{
                 nexusUrl: 'http://13.233.28.143:8081/', 
                 nexusVersion: 'nexus3', protocol: 'http', 
                 repository: 'http://13.233.28.143:8081/repository/my-repo/', 
-                version: '2.6.6'
-            }
+                version: '1.0.0'          
+                  }
             
         }        
     }
