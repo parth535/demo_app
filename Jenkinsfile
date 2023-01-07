@@ -34,7 +34,7 @@ pipeline{
             steps{
                 sh '''
                  docker build -t my-app:v1.${BUID_ID} .
-                  docker run -d --name my-container my-app:v1.${BUID_ID}
+                  docker run -d --name my-container-${BUILD_ID} my-app:v1.${BUID_ID}
                 '''
             }
         }   
