@@ -34,10 +34,10 @@ pipeline{
                     ]
                     ], credentialsId: 'nexus-id', 
                     groupId: 'com.example', 
-                    nexusUrl: 'http://13.233.28.143:8081/', 
+                    nexusUrl: '13.233.28.143:8081/', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http',
-                    repository: 'http://13.233.28.143:8081/repository/my-repo/', 
+                    repository: '13.233.28.143:8081/repository/my-repo/', 
                     version: '1.0.0'
                   }
             
