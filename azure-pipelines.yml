@@ -6,8 +6,6 @@
 trigger:
 - main
 
-
-
 steps:
 - task: Maven@3
   inputs:
